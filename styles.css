@@ -1,0 +1,174 @@
+body {
+  font-size: 15px;
+}
+
+button {
+  background: #ffc600;
+  border: 0;
+  padding: 10px 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.top {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "tacos tacos price1"
+    "tacos tacos price2";
+}
+
+.hero {
+  grid-area: tacos;
+  min-height: 400px;
+  background: white url(/images/taco.jpg);
+  background-size: cover;
+  background-position: bottom right;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.hero > * {
+  background: #ffc600;
+  padding: 10px;
+}
+
+.cta1 {
+  grid-area: price1;
+  background: #ffc600;
+  color: black;
+  border: 1px solid blue;
+}
+
+.cta {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+}
+.cta p {
+  margin: 0;
+}
+
+.cta2 {
+  grid-area: price2;
+  background: #ffc600;
+  color: black;
+  border: 1px solid green;
+  align-content: center;
+  justify-content: center;
+}
+
+.price {
+  font-size: 60px;
+  font-weight: 400;
+}
+
+.menu ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.menu a {
+  background: #ffc600;
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+[aria-controls="menu-list"] {
+  display: none;
+}
+
+.features {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.feature {
+  background: white;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.feature p {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.feature .icon {
+  font-size: 40px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  background: white;
+  padding: 50px;
+  align-items: center;
+}
+
+.gallery {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery img {
+  width: 100%;
+}
+.gallery h2 {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 15px;
+  align-items: center;
+}
+
+.gallery h2:before,
+.gallery h2:after {
+  display: block;
+  content: "";
+  background: linear-gradient(to left, #ffc600, transparent);
+  height: 10px;
+}
+
+.gallery h2:after {
+  background: linear-gradient(to right, #ffc600, transparent);
+}
+
+@media (max-width: 750px) {
+  .top {
+    grid-template-areas:
+      "tacos tacos "
+      "price1 price2";
+  }
+}
+
+@media (max-width: 500px) {
+  .top {
+    grid-template-areas:
+      "tacos"
+      "price1"
+      "price2";
+  }
+}
