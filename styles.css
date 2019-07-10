@@ -172,3 +172,26 @@ img {
       "price2";
   }
 }
+
+@media (max-width: 1000px) {
+  .menu {
+    order: -1;
+  }
+
+  [aria-controls="menu-list"] {
+    display: block;
+    border-bottom: 10px;
+  }
+
+  .menu ul {
+    transform: rotateX(90deg);
+    max-height: 0;
+    transition: 0.5s;
+  }
+
+  [aria-expanded="true"] ~ ul {
+    display: grid;
+    transform: rotateX(0);
+    max-height: 500px;
+  }
+}

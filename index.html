@@ -113,6 +113,16 @@
       </section>
     </div>
 
-    <script></script>
+    <script>
+      const button = document.querySelector("button[aria-expanded]");
+
+      function toggleNav({ target }) {
+        const toggle = target.getAttribute("aria-expanded") === "true" || false;
+        console.log(toggle);
+        target.setAttribute("aria-expanded", !toggle);
+      }
+
+      button.addEventListener("click", toggleNav);
+    </script>
   </body>
 </html>
